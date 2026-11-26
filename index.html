@@ -12,12 +12,11 @@
     <style>
         /* --- CSS VARIABEL & RESET --- */
         :root {
-            --dark-green: #234b3f;
-            --light-green: #365f51;
-            --cream: #e8dcc8;
-            --beige: #dccba8;
-            --text-dark: #333;
-            --text-light: #f4f4f4;
+            --burgundy: #58191E;
+            --rosewood: #281A17;
+            --beige: #F2E4D0;
+            --burgundy-dark: #3d1014;
+            --beige-light: #faf5ee;
         }
 
         * {
@@ -28,8 +27,8 @@
         }
 
         body {
-            background-color: var(--cream);
-            color: var(--text-dark);
+            background-color: var(--beige);
+            color: var(--rosewood);
             overflow-x: hidden;
         }
 
@@ -37,8 +36,8 @@
 
         /* --- NAVBAR --- */
         header {
-            background-color: var(--dark-green);
-            color: white;
+            background-color: var(--burgundy);
+            color: var(--beige);
             padding: 15px 50px;
             display: flex;
             justify-content: space-between;
@@ -46,7 +45,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(40, 26, 23, 0.2);
         }
 
         .logo-container {
@@ -55,17 +54,12 @@
             gap: 15px;
         }
 
-        .logo-box {
-            background-color: var(--cream);
-            color: var(--dark-green);
-            font-weight: 700;
-            font-size: 24px;
-            width: 45px;
-            height: 45px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 8px;
+        .logo-img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+            background-color: transparent;
+            border-radius: 0;
         }
 
         .logo-text h1 {
@@ -73,12 +67,13 @@
             font-weight: 700;
             line-height: 1.2;
             letter-spacing: 1px;
+            color: var(--beige);
         }
 
         .logo-text p {
             font-size: 10px;
             letter-spacing: 1px;
-            color: #c0d6cf;
+            color: #d1b8a5;
         }
 
         nav ul {
@@ -91,64 +86,49 @@
             font-size: 14px;
             font-weight: 600;
             transition: color 0.3s;
+            color: var(--beige);
         }
 
         nav ul li a:hover {
-            color: var(--beige);
+            color: #d1b8a5;
         }
 
         /* --- HERO SECTION --- */
         .hero {
-            background-color: var(--beige);
-            background-image: url('img/hero-bg.jpg'); /* GANTI GAMBAR DI SINI */
+            background-image: url('img/banner.gif'); 
             background-size: cover;
             background-position: center;
-            background-blend-mode: multiply; /* Membuat gambar menyatu dengan warna */
+            background-repeat: no-repeat;
             margin: 20px;
             border-radius: 15px;
-            height: 400px;
+            height: 400px; 
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            color: var(--dark-green);
+            color: var(--beige);
             position: relative;
-        }
-
-        .hero h2 {
-            font-size: 48px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-        }
-
-        .hero h3 {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .hero p {
-            font-size: 14px;
-            margin-bottom: 25px;
-            color: #4a4a4a;
+            box-shadow: 0 10px 20px rgba(40, 26, 23, 0.3);
+            overflow: hidden; 
         }
 
         .btn-primary {
-            background-color: var(--dark-green);
-            color: white;
+            background-color: var(--beige);
+            color: var(--burgundy);
             padding: 12px 30px;
             border-radius: 25px;
-            font-weight: 600;
+            font-weight: 700;
             border: none;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: all 0.3s ease;
             font-size: 14px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
         .btn-primary:hover {
-            background-color: var(--light-green);
+            background-color: white;
+            transform: translateY(-2px);
         }
 
         /* --- SECTION: PENGENALAN --- */
@@ -158,13 +138,13 @@
         }
 
         .section-intro h2 {
-            color: var(--dark-green);
+            color: var(--burgundy);
             font-size: 28px;
             margin-bottom: 10px;
         }
 
         .section-intro p {
-            color: #666;
+            color: var(--rosewood);
             font-size: 14px;
             max-width: 800px;
             margin: 0 auto;
@@ -178,7 +158,7 @@
         .gallery-section h2 {
             font-size: 22px;
             margin-bottom: 20px;
-            color: var(--dark-green);
+            color: var(--burgundy);
         }
 
         .grid-container {
@@ -188,15 +168,17 @@
         }
 
         .card {
-            background-color: #f9f9f9;
+            background-color: var(--beige-light);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
+            box-shadow: 0 4px 10px rgba(40, 26, 23, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(40, 26, 23, 0.1);
         }
 
         .card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(88, 25, 30, 0.2);
         }
 
         .card-img {
@@ -207,11 +189,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #888;
+            color: var(--rosewood);
             font-size: 40px;
         }
 
-        /* Jika gambar tidak ada, tampilkan placeholder */
         .card-img img {
             width: 100%;
             height: 100%;
@@ -223,89 +204,119 @@
         }
 
         .card-body h3 {
-            color: var(--dark-green);
+            color: var(--burgundy);
             font-size: 18px;
             margin-bottom: 5px;
         }
 
         .card-body p {
             font-size: 12px;
-            color: #777;
+            color: var(--rosewood);
         }
 
-        /* --- SECTION: PETA --- */
-        .map-section {
-            background-color: var(--light-green);
-            padding: 50px 50px;
-            color: white;
-        }
-
-        .map-section h2 {
-            font-size: 24px;
-            margin-bottom: 5px;
-        }
-
-        .map-section p {
-            font-size: 14px;
-            color: #c0d6cf;
-            margin-bottom: 20px;
-        }
-
-        .map-container {
-            background-color: var(--beige);
-            height: 400px;
-            border-radius: 15px;
+        /* --- SECTION: PETA DUA KOLOM --- */
+        .map-layout-section {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            transition: opacity 0.3s;
+            height: 600px; 
+            width: 100%;
+            background-color: var(--beige-light);
+            border-top: 2px solid var(--burgundy);
+            border-bottom: 2px solid var(--burgundy);
+        }
+
+        .map-side {
+            flex: 2; /* Peta mengambil 2/3 bagian */
             position: relative;
             overflow: hidden;
-        }
-        
-        .map-container:hover {
-            opacity: 0.9;
+            border-right: 2px solid var(--burgundy);
         }
 
-        .map-icon {
-            font-size: 50px;
-            color: var(--dark-green);
-            margin-bottom: 10px;
+        .map-side iframe {
+            width: 100%;
+            height: calc(100% + 80px);
+            border: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-top: -80px; /* Trik sembunyikan header Google Maps */
         }
 
-        .map-text {
-            color: var(--dark-green);
+        .category-side {
+            flex: 1; /* Sidebar kanan mengambil 1/3 bagian */
+            padding: 30px;
+            overflow-y: auto; 
+            background-color: var(--beige-light);
+        }
+
+        .category-side h3 {
+            color: var(--burgundy);
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--burgundy);
+            padding-bottom: 10px;
+        }
+
+        .category-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .category-item {
+            background-color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(40, 26, 23, 0.1);
+            text-decoration: none;
+            color: var(--rosewood);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .category-item:hover {
+            transform: translateX(5px);
+            background-color: var(--burgundy);
+            color: var(--beige);
+            box-shadow: 0 4px 10px rgba(88, 25, 30, 0.3);
+        }
+
+        .category-item span {
             font-weight: 600;
             font-size: 16px;
-            letter-spacing: 1px;
+        }
+
+        .category-item i {
+            font-size: 14px;
         }
 
         /* --- SECTION: ULASAN --- */
         .review-section {
             padding: 50px;
-            background-color: #f4f0e6;
+            background-color: var(--beige);
         }
 
         .review-container {
-            background-color: white;
+            background-color: var(--beige-light);
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(40, 26, 23, 0.1);
             max-width: 800px;
             margin: 0 auto;
+            border: 1px solid rgba(40, 26, 23, 0.1);
         }
 
         .review-header h2 {
-            color: var(--dark-green);
+            color: var(--burgundy);
             font-size: 24px;
             margin-bottom: 5px;
         }
 
         .review-header p {
             font-size: 14px;
-            color: #777;
+            color: var(--rosewood);
             margin-bottom: 20px;
         }
 
@@ -329,15 +340,22 @@
             width: 100%;
             height: 100px;
             padding: 15px;
-            border: 1px solid #ddd;
+            border: 1px solid #d1b8a5;
             border-radius: 8px;
             resize: none;
             font-family: inherit;
+            background-color: white;
+            color: var(--rosewood);
+        }
+
+        .review-form textarea:focus {
+            outline: none;
+            border-color: var(--burgundy);
         }
 
         .btn-submit {
-            background-color: var(--dark-green);
-            color: white;
+            background-color: var(--burgundy);
+            color: var(--beige);
             padding: 15px;
             border: none;
             border-radius: 8px;
@@ -347,20 +365,19 @@
         }
 
         .btn-submit:hover {
-            background-color: var(--light-green);
+            background-color: var(--burgundy-dark);
         }
 
-        /* Tampilan Ulasan yang sudah masuk */
         .reviews-list {
             margin-top: 30px;
-            border-top: 1px solid #eee;
+            border-top: 1px solid rgba(40, 26, 23, 0.1);
             padding-top: 20px;
         }
 
         .review-item {
             margin-bottom: 15px;
             padding-bottom: 15px;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid rgba(40, 26, 23, 0.1);
         }
 
         .review-item .stars {
@@ -371,13 +388,13 @@
 
         .review-item .text {
             font-size: 14px;
-            color: #444;
+            color: var(--rosewood);
         }
 
         /* --- FOOTER --- */
         footer {
-            background-color: var(--dark-green);
-            color: white;
+            background-color: var(--rosewood);
+            color: var(--beige);
             text-align: center;
             padding: 40px 20px;
         }
@@ -386,20 +403,20 @@
             font-size: 28px;
             letter-spacing: 2px;
             margin-bottom: 10px;
+            color: var(--beige);
         }
 
         footer p {
             font-size: 14px;
-            color: #c0d6cf;
+            color: #d1b8a5;
             margin-bottom: 5px;
         }
 
-        /* Tombol Scroll Down */
         .scroll-down {
             position: absolute;
             bottom: 20px;
-            background-color: #1a1a1a;
-            color: white;
+            background-color: var(--rosewood);
+            color: var(--beige);
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -408,6 +425,7 @@
             align-items: center;
             cursor: pointer;
             animation: bounce 2s infinite;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
         @keyframes bounce {
@@ -421,9 +439,21 @@
             header { flex-direction: column; gap: 15px; padding: 15px; }
             nav ul { gap: 15px; font-size: 12px; }
             .grid-container { grid-template-columns: 1fr; }
-            .hero h2 { font-size: 32px; }
-            .hero h3 { font-size: 18px; }
-            .map-section, .review-section, .gallery-section { padding: 30px 20px; }
+            .hero { height: 250px; }
+            
+            .map-layout-section {
+                flex-direction: column;
+                height: auto;
+            }
+            .map-side {
+                height: 400px;
+                border-right: none;
+                border-bottom: 2px solid var(--burgundy);
+            }
+            .category-side {
+                padding: 20px;
+            }
+            .review-section, .gallery-section { padding: 30px 20px; }
         }
     </style>
 </head>
@@ -432,7 +462,7 @@
     <!-- NAVBAR -->
     <header>
         <div class="logo-container">
-            <div class="logo-box">S</div>
+            <img src="img/logo.jpg" alt="Logo SAGARA" class="logo-img">
             <div class="logo-text">
                 <h1>SAGARA</h1>
                 <p>GASTRONOMIC HERITAGE</p>
@@ -450,10 +480,6 @@
 
     <!-- HERO SECTION (BERANDA) -->
     <section id="beranda" class="hero">
-        <h2>SAGARA</h2>
-        <h3>Menelusuri Jejak, Mengenal Rasa.</h3>
-        <p>Warisan Gastronomi Kabupaten Tasikmalaya</p>
-        <button class="btn-primary" onclick="document.getElementById('jelajah').scrollIntoView({behavior: 'smooth'})">JELAJAHI SEKARANG</button>
         <div class="scroll-down" onclick="document.getElementById('intro').scrollIntoView({behavior: 'smooth'})">
             <i class="fas fa-arrow-down"></i>
         </div>
@@ -469,59 +495,99 @@
     <section id="jelajah" class="gallery-section">
         <h2>JELAJAHI WARISAN GASTRONOMI</h2>
         <div class="grid-container">
-            <!-- Card 1 -->
-            <div class="card">
+            <a href="detail-citruk.html" target="_blank" class="card">
                 <div class="card-img">
-                    <!-- GANTI src DENGAN GAMBAR ANDA -->
                     <img src="img/citruk.jpg" alt="Citruk" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-image\'></i>';">
                 </div>
                 <div class="card-body">
                     <h3>CITRUK</h3>
                     <p>Sejarah · Budaya · Proses</p>
                 </div>
-            </div>
-            <!-- Card 2 -->
-            <div class="card">
+            </a>
+            
+            <a href="soto-pataruman.html" target="_blank" class="card">
                 <div class="card-img">
-                    <!-- GANTI src DENGAN GAMBAR ANDA -->
                     <img src="img/soto.jpg" alt="Soto Pataruman" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-image\'></i>';">
                 </div>
                 <div class="card-body">
                     <h3>SOTO PATARUMAN</h3>
                     <p>Sejarah · Budaya · Proses</p>
                 </div>
-            </div>
-            <!-- Card 3 (Tambahan agar sesuai desain ada 4) -->
-            <div class="card">
+            </a>
+            
+            <a href="oncom-benhil.html" target="_blank" class="card">
                 <div class="card-img">
-                    <img src="img/nasi-liwet.jpg" alt="Nasi Liwet" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-image\'></i>';">
+                    <img src="img/nasi-liwet.jpg" alt="Nasi tutug oncom Benhil" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-image\'></i>';">
                 </div>
                 <div class="card-body">
-                    <h3>NASI LIWET</h3>
+                    <h3>Nasi tutug oncom Benhil</h3>
                     <p>Sejarah · Budaya · Proses</p>
                 </div>
-            </div>
-            <!-- Card 4 -->
-            <div class="card">
+            </a>
+            
+            <a href="ss-bojong-ibu-momoh.html" target="_blank" class="card">
                 <div class="card-img">
-                    <img src="img/colenak.jpg" alt="Colenak" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-image\'></i>';">
+                    <img src="img/colenak.jpg" alt="es bojong ibu momoh" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-image\'></i>';">
                 </div>
                 <div class="card-body">
                     <h3>COLENAK</h3>
                     <p>Sejarah · Budaya · Proses</p>
                 </div>
-            </div>
+            </a>
+
+            <a href="cilok-goang.html" target="_blank" class="card">
+                <div class="card-img">
+                    <img src="img/colenak.jpg" alt="Cilok Goang" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-image\'></i>';">
+                </div>
+                <div class="card-body">
+                    <h3>Cilok Goang</h3>
+                    <p>Sejarah · Budaya · Proses</p>
+                </div>
+            </a>
         </div>
     </section>
 
-    <!-- SECTION PETA -->
-    <section id="peta" class="map-section">
-        <h2>Peta Gastronomi</h2>
-        <p>Temukan lokasi persebaran makanan khas Kabupaten Tasikmalaya.</p>
-        <div class="map-container" onclick="window.open('https://www.google.com/maps/search/makanan+khas+tasikmalaya', '_blank')">
-            <i class="fas fa-map map-icon"></i>
-            <span class="map-text">AREA GOOGLE MY MAPS</span>
+    <!-- SECTION PETA (DUA KOLOM) -->
+    <section id="peta" class="map-layout-section">
+        
+        <!-- KOLOM KIRI: PETA -->
+        <div class="map-side">
+            <iframe 
+                src="https://www.google.com/maps/d/embed?mid=1MShfgEUpN61K3mWEexT0UVI0aSVWKHo&ehbc=2E312F" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
         </div>
+
+        <!-- KOLOM KANAN: KATEGORI & LINK -->
+        <div class="category-side">
+            <h3>Lokasi Kuliner</h3>
+            <div class="category-list">
+                
+                <!-- SILAKAN GANTI LINK href DI BAWAH DENGAN LINK GOOGLE MAPS ASLI -->
+                <a href="https://maps.google.com/?q=Citruk+Mulyana+Pagerageung+Tasikmalaya" target="_blank" class="category-item">
+                    <span>Citruk Mulyana</span>
+                    <i class="fas fa-location-arrow"></i>
+                </a>
+
+                <a href="https://maps.google.com/?q=Soto+Ayam+Pataruman+23+Tasikmalaya" target="_blank" class="category-item">
+                    <span>Soto Ayam Pataruman</span>
+                    <i class="fas fa-location-arrow"></i>
+                </a>
+
+                <a href="https://maps.google.com/?q=Nasi+Liwet+Tasikmalaya" target="_blank" class="category-item">
+                    <span>Nasi Liwet</span>
+                    <i class="fas fa-location-arrow"></i>
+                </a>
+
+                <a href="https://maps.google.com/?q=Colenak+Tasikmalaya" target="_blank" class="category-item">
+                    <span>Colenak</span>
+                    <i class="fas fa-location-arrow"></i>
+                </a>
+
+            </div>
+        </div>
+
     </section>
 
     <!-- SECTION ULASAN -->
@@ -544,9 +610,7 @@
                 <button type="submit" class="btn-submit">BERIKAN ULASAN</button>
             </form>
 
-            <!-- Tempat menampilkan ulasan -->
             <div class="reviews-list" id="reviewsList">
-                <!-- Ulasan akan muncul di sini via JavaScript -->
             </div>
         </div>
     </section>
@@ -560,7 +624,6 @@
 
     <!-- JAVASCRIPT UNTUK ULASAN -->
     <script>
-        // --- LOGIKA BINTANG ---
         const stars = document.querySelectorAll('#starRating i');
         let currentRating = 0;
 
@@ -569,7 +632,6 @@
                 currentRating = parseInt(star.getAttribute('data-value'));
                 updateStars(currentRating);
             });
-            // Efek hover
             star.addEventListener('mouseover', () => {
                 updateStars(parseInt(star.getAttribute('data-value')));
             });
@@ -591,7 +653,6 @@
             });
         }
 
-        // --- LOGIKA SIMPAN ULASAN ---
         document.getElementById('reviewForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -601,30 +662,21 @@
             }
 
             const text = document.getElementById('reviewText').value;
-            
-            // Ambil data dari localStorage
             let reviews = JSON.parse(localStorage.getItem('sagaraReviews')) || [];
-            
-            // Tambah ulasan baru
             reviews.push({ rating: currentRating, text: text, date: new Date().toLocaleDateString() });
-            
-            // Simpan ke localStorage
             localStorage.setItem('sagaraReviews', JSON.stringify(reviews));
 
-            // Reset form
             document.getElementById('reviewText').value = '';
             currentRating = 0;
             updateStars(0);
 
-            // Tampilkan ulasan
             displayReviews();
             alert("Terima kasih! Ulasan Anda telah disimpan.");
         });
 
-        // --- TAMPILKAN ULASAN ---
         function displayReviews() {
             const list = document.getElementById('reviewsList');
-            list.innerHTML = ''; // Kosongkan dulu
+            list.innerHTML = '';
             
             let reviews = JSON.parse(localStorage.getItem('sagaraReviews')) || [];
             
@@ -633,7 +685,6 @@
                 return;
             }
 
-            // Tampilkan dari yang terbaru
             reviews.reverse().forEach(review => {
                 const starsHTML = '<i class="fas fa-star"></i>'.repeat(review.rating);
                 const item = document.createElement('div');
@@ -647,10 +698,8 @@
             });
         }
 
-        // Jalankan saat halaman dimuat
         displayReviews();
 
-        // --- SMOOTH SCROLL UNTUK MENU NAVIGASI ---
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
